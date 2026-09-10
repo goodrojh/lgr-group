@@ -1,0 +1,3 @@
+:HL["/lgr-group/_next/static/chunks/3hoenjrgej0sj.css","style"]
+:HL["/lgr-group/images/lgr-logo.webp","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":4160,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"uTNYTGWrR5KoK62hrNiOI"}

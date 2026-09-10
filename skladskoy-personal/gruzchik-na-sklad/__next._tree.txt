@@ -1,0 +1,6 @@
+:HL["/lgr-group/_next/static/chunks/3hoenjrgej0sj.css","style"]
+:HL["/lgr-group/_next/static/media/44fac91e6f2d2b1b-s.p.1d_6dtvtn9g3_.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/lgr-group/_next/static/media/e8f2fbee2754df70-s.p.1dqa_6e_ad4sj.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/lgr-group/images/lgr-logo.webp","image"]
+:HL["/lgr-group/images/warehouse-loader.webp","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"industry","param":{"type":"d","key":"skladskoy-personal","siblings":["company","consent","contacts","cookie","price","privacy","russia","services"]},"prefetchHints":4160,"slots":{"children":{"name":"profession","param":{"type":"d","key":"gruzchik-na-sklad","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"uTNYTGWrR5KoK62hrNiOI"}
