@@ -86,7 +86,7 @@ export function ProfessionCard({ p, index = 0 }: { p: Profession; index?: number
         </div>
         <div className="p-5">
           <div className="flex items-center justify-between gap-2">
-            <h3 className="font-bold text-[#101110] text-[16px]">{p.name}</h3>
+            <h3 className="font-bold text-[#101110] text-[15px] md:text-[16px] leading-tight min-w-0 break-words">{p.name}</h3>
             <ArrowUpRight size={18} className="text-gray-300 group-hover:text-accent-strong transition-colors shrink-0" />
           </div>
           <p className="text-[#666767] text-[13px] leading-[1.55] mt-2 line-clamp-2">{p.tasks.join(" ")}</p>
