@@ -30,3 +30,13 @@ npm run build
 ## Видео в hero
 
 В `components/Hero.tsx` фон — `<img>`; для видео (Kling) замените его на `<video autoPlay muted loop playsInline>` с файлом в `public/`.
+
+## Деплой
+
+Сейчас публикация идёт в ветку `gh-pages` командой:
+
+```bash
+npm run deploy
+```
+
+(сборка с `NEXT_PUBLIC_BASE_PATH=/lgr-group` и пуш папки `out/` в `gh-pages`). Готовый workflow для GitHub Actions лежит в `deploy.github-actions.example.yml` — чтобы включить, переместите его в `.github/workflows/deploy.yml` (нужен токен со scope `workflow`) и переключите Pages на «GitHub Actions».
