@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Pricing from "@/components/Pricing";
+import Offer from "@/components/Offer";
 import SavingsCalculator from "@/components/SavingsCalculator";
 import FAQ from "@/components/FAQ";
 import LeadForm from "@/components/LeadForm";
@@ -32,6 +33,7 @@ export default function PricePage() {
           { value: "12 профессий", label: "в базовом прайсе + расчёт под другие" },
         ]}
       />
+      <Offer />
       <Pricing />
       <SavingsCalculator />
 

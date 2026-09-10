@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import Clients from "@/components/Clients";
+import Offer from "@/components/Offer";
 import PainPoints from "@/components/PainPoints";
 import Scenarios from "@/components/Scenarios";
 import Industries from "@/components/Industries";
@@ -19,6 +20,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Hero />
+      <Offer />
       <Clients />
       <PainPoints />
       <Scenarios />
