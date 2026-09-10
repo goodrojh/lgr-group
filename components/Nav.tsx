@@ -5,11 +5,20 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { asset, nav, site } from "@/lib/site";
+import { CtaButton } from "./LeadModal";
 import { industries } from "@/lib/data";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -19,13 +28,18 @@ export default function Nav() {
   }, [open]);
 
   return (
-    <div className="absolute top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-6xl">
+    <div className="fixed top-3 md:top-5 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-6xl">
       <motion.nav
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" as const }}
       >
-        <div className="relative flex items-center justify-between p-[8px] md:p-[10px] rounded-full bg-white/5 backdrop-blur-xl border border-white/10">
+        <div
+          className={
+            "relative flex items-center justify-between p-[8px] md:p-[10px] rounded-full backdrop-blur-xl border transition-all duration-300 " +
+            (scrolled ? "bg-[#171f27]/92 border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.35)]" : "bg-white/5 border-white/10")
+          }
+        >
           {/* Логотип */}
           <Link href="/" className="flex items-center gap-3 pl-2 md:pl-3">
             <img src={asset("/images/lgr-logo.webp")} alt="ЛГР" className="h-9 w-auto" />
@@ -99,12 +113,12 @@ export default function Nav() {
               <Phone size={16} className="text-accent" />
               {site.phone}
             </a>
-            <Link
-              href="/contacts/"
+            <CtaButton
+              source="Меню"
               className="hidden sm:inline-flex rounded-full px-5 py-2.5 text-[14px] md:text-[15px] font-semibold bg-accent text-brand-dark hover:bg-peach transition-all hover:scale-105 active:scale-95"
             >
               Обсудить проект
-            </Link>
+            </CtaButton>
             <button
               aria-label="Меню"
               onClick={() => setOpen(true)}
@@ -167,13 +181,13 @@ export default function Nav() {
               <a href={`mailto:${site.email}`} className="text-white/60">
                 {site.email}
               </a>
-              <Link
-                href="/contacts/"
+              <CtaButton
+                source="Мобильное меню"
                 onClick={() => setOpen(false)}
                 className="mt-6 rounded-full px-6 py-4 text-center text-base font-semibold bg-accent text-brand-dark"
               >
                 Обсудить проект
-              </Link>
+              </CtaButton>
             </div>
           </motion.div>
         )}

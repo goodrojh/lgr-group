@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { asset } from "@/lib/site";
+import { bg } from "@/lib/site";
 
 export default function FAQ({
   items,
@@ -31,9 +31,9 @@ export default function FAQ({
         <div className="relative max-w-[620px] mx-auto group">
           <div className="absolute -inset-3 md:-inset-8 bg-[#171f27] rounded-[40px] overflow-hidden z-0 shadow-inner">
             <img
-              src={asset(`/images/${image}.webp`)}
+              src={bg(image)}
               alt=""
-              className="w-full h-full object-cover opacity-60 [filter:contrast(1.2)] group-hover:scale-105 transition-transform duration-700"
+              className="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-[#171f27]/30 backdrop-blur-[2px]" />
           </div>

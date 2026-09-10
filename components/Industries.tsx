@@ -5,7 +5,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Warehouse, Factory, ShoppingCart, ChefHat, Hotel, LayoutGrid, ArrowUpRight } from "lucide-react";
 import { industries, getProfessions } from "@/lib/data";
-import { asset } from "@/lib/site";
+import { asset, bg } from "@/lib/site";
+import { CtaButton } from "./LeadModal";
 
 const icons: Record<string, React.ElementType> = {
   "skladskoy-personal": Warehouse,
@@ -37,12 +38,13 @@ export default function Industries({ variant = "home" }: { variant?: "home" | "s
             >
               Каталог профессий
             </Link>
-            <Link
-              href="/contacts/"
+            <CtaButton
+              source="Отраслевые решения"
+              title="Подобрать решение под объект"
               className="flex-1 md:flex-none text-center bg-accent text-brand-dark rounded-full px-[22px] py-3 text-sm font-semibold hover:bg-peach transition-all hover:shadow-lg"
             >
               Подобрать решение
-            </Link>
+            </CtaButton>
           </div>
         </div>
 
@@ -103,7 +105,7 @@ export default function Industries({ variant = "home" }: { variant?: "home" | "s
               className="group relative flex flex-col justify-between bg-[#171f27] text-white rounded-[20px] overflow-hidden hover:shadow-xl transition-all duration-300 h-full p-6 min-h-[320px]"
             >
               <img
-                src={asset("/images/home-city.webp")}
+                src={bg("home-city")}
                 alt=""
                 className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-700"
               />

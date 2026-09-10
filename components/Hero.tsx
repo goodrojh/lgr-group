@@ -1,30 +1,29 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
 import Nav from "./Nav";
-import Dashboard from "./Dashboard";
-import { asset, site } from "@/lib/site";
+import { CtaButton } from "./LeadModal";
+import { bg, site } from "@/lib/site";
 import { keyFacts } from "@/lib/data";
 
 export default function Hero() {
   return (
-    <section className="min-h-[100vh] flex flex-col bg-[#0b0f14] relative overflow-hidden">
+    <section className="min-h-[92vh] flex flex-col bg-[#0b0f14] relative overflow-hidden">
       {/* Фон: фото объекта + затемнение. Слот под видео (Kling) — заменить <img> на <video autoPlay muted loop playsInline>. */}
       <img
-        src={asset("/images/warehouse.webp")}
+        src={bg("home-hero")}
         alt=""
         aria-hidden
-        className="absolute inset-0 w-full h-full object-cover z-0 opacity-55 [filter:contrast(1.4)_saturate(0.85)_brightness(0.9)]"
+        className="absolute inset-0 w-full h-full object-cover z-0 opacity-60"
       />
-      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#0b0f14]/80 via-[#0b0f14]/70 to-[#0b0f14]" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#0b0f14]/85 via-[#0b0f14]/60 to-[#0b0f14]" />
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-accent/15 blur-[140px] z-[1]" />
 
       <Nav />
 
-      <div className="relative flex-1 flex flex-col items-center text-center px-5 md:px-6 pt-[130px] md:pt-[170px] pb-16 z-10">
+      <div className="relative flex-1 flex flex-col items-center justify-center text-center px-5 md:px-6 pt-[130px] md:pt-[150px] pb-20 z-10">
         <div className="flex flex-col items-center w-full">
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -62,13 +61,13 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" as const }}
             className="flex flex-col sm:flex-row items-center gap-3"
           >
-            <Link
-              href="/contacts/"
+            <CtaButton
+              source="Главная — hero"
               className="rounded-full px-8 py-4 text-base font-semibold bg-accent text-brand-dark hover:bg-peach transition-all shadow-2xl hover:scale-105 active:scale-95"
               style={{ boxShadow: "0 8px 32px 0 rgba(209,165,107,0.35)" }}
             >
               Получить расчёт за 30 минут
-            </Link>
+            </CtaButton>
             <a
               href={site.phoneHref}
               className="rounded-full px-7 py-4 text-base font-semibold bg-white/10 backdrop-blur-lg border border-white/20 text-white hover:bg-white/20 transition-all flex items-center gap-2"
@@ -104,9 +103,6 @@ export default function Hero() {
             ))}
           </motion.div>
 
-          <div className="mt-10 w-full">
-            <Dashboard />
-          </div>
         </div>
       </div>
     </section>

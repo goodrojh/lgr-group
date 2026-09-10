@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { Calculator, Info, ArrowRight } from "lucide-react";
+import { CtaButton } from "./LeadModal";
 
 // Допущения модели (можно править в одном месте)
 const ASSUMPTIONS = {
@@ -272,12 +272,13 @@ export default function SavingsCalculator() {
               транспорт, питание и одежду по условиям площадки — их уточняем в итоговом расчёте.
             </p>
           </div>
-          <Link
-            href="/contacts/"
+          <CtaButton
+            source={`Калькулятор: ${people} чел., ${months} мес., ${rate} ₽/ч`}
+            title="Точный расчёт по данным объекта"
             className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold bg-accent text-brand-dark hover:bg-peach transition-all whitespace-nowrap"
           >
             Получить точный расчёт <ArrowRight size={16} />
-          </Link>
+          </CtaButton>
         </div>
       </div>
     </section>

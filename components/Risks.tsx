@@ -4,15 +4,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
 import { riskQuestions } from "@/lib/data";
-import { asset } from "@/lib/site";
+import { bg } from "@/lib/site";
 
 export default function Risks() {
   return (
     <section className="bg-[#0b0f14] text-white py-20 md:py-24 px-5 md:px-12 relative overflow-hidden">
       <img
-        src={asset("/images/hotel.webp")}
+        src={bg("shelves-dark")}
         alt=""
-        className="absolute inset-0 w-full h-full object-cover opacity-25 [filter:contrast(1.2)]"
+        className="absolute inset-0 w-full h-full object-cover opacity-40"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#0b0f14] via-[#0b0f14]/90 to-[#0b0f14]/60" />
       <div className="max-w-[1200px] mx-auto relative grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-center">

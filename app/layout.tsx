@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { asset, site } from "@/lib/site";
 import CookieBanner from "@/components/CookieBanner";
+import { LeadModalProvider } from "@/components/LeadModal";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -30,8 +31,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ru" className={`${montserrat.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-white text-[#111]">
-        {children}
-        <CookieBanner />
+        <LeadModalProvider>
+          {children}
+          <CookieBanner />
+        </LeadModalProvider>
       </body>
     </html>
   );

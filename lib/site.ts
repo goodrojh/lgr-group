@@ -18,6 +18,11 @@ export const site = {
 
 export const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
+/** Фоновое фото (временные стоковые, public/images/stock). */
+export function bg(name: string) {
+  return asset(`/images/stock/${name}.jpg`);
+}
+
 /** Путь к статике с учётом basePath (GitHub Pages). */
 export function asset(path: string) {
   return `${BASE}${path.startsWith("/") ? path : `/${path}`}`;

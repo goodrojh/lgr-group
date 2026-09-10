@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { processSteps, roles } from "@/lib/data";
+import { CtaButton } from "./LeadModal";
 
 export default function Process({ showRoles = true }: { showRoles?: boolean }) {
   return (
@@ -93,12 +93,12 @@ export default function Process({ showRoles = true }: { showRoles?: boolean }) {
               Финальное разделение ответственности закрепляется в договоре и регламенте конкретного проекта.
             </p>
             <div className="text-center mt-8">
-              <Link
-                href="/contacts/"
+              <CtaButton
+                source="Операционная модель"
                 className="inline-flex rounded-full px-8 py-4 text-base font-semibold bg-[#171f27] text-white hover:bg-accent hover:text-brand-dark transition-all"
               >
                 Обсудить проект
-              </Link>
+              </CtaButton>
             </div>
           </div>
         )}

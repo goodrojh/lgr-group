@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { asset, site } from "@/lib/site";
 import { industries, getProfessions } from "@/lib/data";
+import { CtaButton } from "./LeadModal";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -21,12 +22,12 @@ export default function Footer() {
           >
             {site.phone}
           </a>
-          <Link
-            href="/contacts/"
+          <CtaButton
+            source="Подвал"
             className="w-full sm:w-auto text-center px-6 py-3.5 rounded-[10px] bg-accent text-brand-dark text-[14px] font-semibold hover:bg-peach transition-all whitespace-nowrap"
           >
             Обсудить проект
-          </Link>
+          </CtaButton>
         </div>
       </div>
 

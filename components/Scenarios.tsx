@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Variants } from "framer-motion";
 import { Building2, TrendingUp, Rocket, Boxes, UserPlus, ArrowRight, CheckCircle2 } from "lucide-react";
 import { scenarios } from "@/lib/data";
-import { asset } from "@/lib/site";
+import { bg } from "@/lib/site";
+import { CtaButton } from "./LeadModal";
 
 const icons = [Building2, TrendingUp, Rocket, Boxes, UserPlus];
 
@@ -139,15 +139,16 @@ export default function Scenarios() {
                 <p className="text-[16px] text-[#676767] leading-[1.7] max-w-[440px]">{s.description}</p>
                 <p className="text-sm text-gray-400">{s.short}</p>
                 <div>
-                  <Link
-                    href="/contacts/"
+                  <CtaButton
+                    source={`Сценарий: ${s.title}`}
+                    title={`Рассчитать сценарий «${s.title}»`}
                     className="relative overflow-hidden bg-[#171f27] text-white rounded-2xl px-8 py-4 text-[15px] font-bold inline-flex items-center gap-3 hover:bg-accent hover:text-brand-dark transition-all duration-500 group"
                   >
                     <span className="relative z-10">Рассчитать этот сценарий</span>
                     <div className="relative z-10 w-6 h-6 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-black/10 transition-colors">
                       <ArrowRight className="w-3.5 h-3.5" />
                     </div>
-                  </Link>
+                  </CtaButton>
                 </div>
               </div>
 
@@ -155,9 +156,9 @@ export default function Scenarios() {
                 <div className="relative w-full max-w-[600px] md:aspect-[4/3] bg-[#171f27] rounded-[36px] md:rounded-[48px] p-5 py-8 md:p-12 flex items-center justify-center overflow-hidden group border border-gray-100">
                   <div className="absolute inset-0 z-0">
                     <img
-                      src={asset(`/images/${s.image}.webp`)}
+                      src={bg(s.image)}
                       alt=""
-                      className="w-full h-full object-cover opacity-60 [filter:contrast(1.2)] group-hover:scale-110 transition-transform duration-[3000ms]"
+                      className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-[3000ms]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#171f27]/80 to-transparent" />
                   </div>

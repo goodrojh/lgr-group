@@ -20,7 +20,6 @@ export default function ContactsPage() {
         lead="Обсудим тип объекта, требуемый состав, график и дату. Проверим возможность запуска и подготовим следующий шаг."
         image="home-city"
         cta="Оставить заявку"
-        ctaHref="#contact"
         crumbs={[{ label: "Контакты", href: "/contacts/" }]}
         facts={null}
         compact

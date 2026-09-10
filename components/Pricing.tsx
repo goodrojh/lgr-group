@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 import { priceList, priceFactors } from "@/lib/data";
-import { asset } from "@/lib/site";
+import { bg } from "@/lib/site";
+import { CtaButton } from "./LeadModal";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -102,7 +102,7 @@ export default function Pricing({ compact = false }: { compact?: boolean }) {
               className="flex-1 rounded-[24px] p-7 md:p-8 relative overflow-hidden flex flex-col justify-between group text-white"
             >
               <div className="absolute inset-0 z-0">
-                <img src={asset("/images/pricing.webp")} alt="" className="w-full h-full object-cover [filter:contrast(1.2)]" />
+                <img src={bg("pricing")} alt="" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-[#171f27]/85" />
               </div>
               <div className="relative z-10">
@@ -130,12 +130,13 @@ export default function Pricing({ compact = false }: { compact?: boolean }) {
                 </ul>
               </div>
               <div className="relative z-10 mt-8">
-                <Link
-                  href="/contacts/"
+                <CtaButton
+                  source="Цены"
+                  title="Расчёт стоимости под ваш объект"
                   className="inline-flex items-center gap-2.5 bg-accent hover:bg-peach text-brand-dark rounded-[14px] py-[14px] px-7 text-[15px] font-bold transition-all duration-200"
                 >
                   Получить расчёт под объект <ArrowRight size={18} />
-                </Link>
+                </CtaButton>
               </div>
             </motion.div>
           </div>

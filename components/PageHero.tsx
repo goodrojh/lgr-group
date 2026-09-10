@@ -5,7 +5,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronRight, Phone } from "lucide-react";
 import Nav from "./Nav";
-import { asset, site } from "@/lib/site";
+import { bg, site } from "@/lib/site";
+import { CtaButton } from "./LeadModal";
 
 const defaultFacts = [
   { value: "5–7 дней", label: "выход персонала" },
@@ -20,7 +21,6 @@ export default function PageHero({
   lead,
   image = "warehouse",
   cta = "Обсудить проект",
-  ctaHref = "/contacts/",
   secondary,
   crumbs = [],
   facts = defaultFacts,
@@ -31,7 +31,6 @@ export default function PageHero({
   lead?: string;
   image?: string;
   cta?: string;
-  ctaHref?: string;
   secondary?: { label: string; href: string };
   crumbs?: { label: string; href: string }[];
   facts?: { value: string; label: string }[] | null;
@@ -40,10 +39,10 @@ export default function PageHero({
   return (
     <section className={"relative bg-[#0b0f14] overflow-hidden " + (compact ? "pb-14" : "pb-20")}>
       <img
-        src={asset(`/images/${image}.webp`)}
+        src={bg(image)}
         alt=""
         aria-hidden
-        className="absolute inset-0 w-full h-full object-cover opacity-35 [filter:contrast(1.25)_saturate(0.9)]"
+        className="absolute inset-0 w-full h-full object-cover opacity-45"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#0b0f14]/80 via-[#0b0f14]/70 to-[#0b0f14]" />
       <div className="absolute -top-40 right-0 w-[700px] h-[500px] rounded-full bg-accent/15 blur-[140px]" />
@@ -100,12 +99,13 @@ export default function PageHero({
           transition={{ delay: 0.3 }}
           className="flex flex-col sm:flex-row sm:items-center gap-3 mt-8"
         >
-          <Link
-            href={ctaHref}
+          <CtaButton
+            source={eyebrow}
+            buttonLabel={cta}
             className="rounded-full px-7 py-4 text-center text-base font-semibold bg-accent text-brand-dark hover:bg-peach transition-all hover:scale-105 active:scale-95"
           >
             {cta}
-          </Link>
+          </CtaButton>
           {secondary && (
             <Link
               href={secondary.href}

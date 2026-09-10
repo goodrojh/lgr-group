@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { asset, site } from "@/lib/site";
+import { bg, site } from "@/lib/site";
 
 const years = new Date().getFullYear() - site.foundedYear;
 
@@ -57,11 +57,11 @@ export default function Metrics() {
       <div className="relative w-full overflow-hidden">
         <div className="relative min-h-[520px] md:h-[450px] w-full">
           <img
-            src={asset("/images/production.webp")}
+            src={bg("archive")}
             alt=""
-            className="absolute inset-0 w-full h-full object-cover [filter:contrast(1.2)]"
+            className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-[#171f27]/50" />
+          <div className="absolute inset-0 bg-[#171f27]/60" />
           <div className="absolute inset-0 flex items-center justify-center px-5 md:px-16 lg:px-20 py-10">
             <motion.div
               initial={{ opacity: 0, y: 40 }}

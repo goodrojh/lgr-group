@@ -10,8 +10,7 @@ export default function NotFound() {
         title="Такой страницы нет"
         lead="Возможно, ссылка устарела. Перейдите к услугам или свяжитесь с нами — подберём решение под объект."
         image="home-city"
-        cta="На главную"
-        ctaHref="/"
+        cta="Обсудить проект"
         secondary={{ label: "Все услуги", href: "/services/" }}
         facts={null}
         compact
